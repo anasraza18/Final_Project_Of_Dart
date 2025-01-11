@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'Admin/adminDashboard.dart';
 
-
+//------------------------for admin------------------------------------
 adminLogin({required String username, required String password}){
   
   do {
@@ -19,15 +19,17 @@ adminLogin({required String username, required String password}){
   }
   } while (true);
 }
-
+//------------------------for parents------------------------------------
 parentsLogin(){
   print("parents");
 }
 
+//------------------------for students------------------------------------
 studentLogin(){
   print("student");
 }
 
+//------------------------for teacher------------------------------------
 teacherLogin(){
   print("teacher");
 }
