@@ -18,3 +18,15 @@ adminLogin({required String username, required String password}){
   }
   } while (true);
 }
+
+parentsLogin(){
+  print("parents");
+}
+
+studentLogin(){
+  print("student");
+}
+
+teacherLogin(){
+  print("teacher");
+}
