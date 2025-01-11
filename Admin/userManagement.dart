@@ -59,6 +59,24 @@ void student(){
   } while (true);
 }
 
+List studentinfo = [];
+
+addStudent(){
+
+}
+
+updateStudent(){
+
+}
+
+deleteStudent(){
+
+}
+
+listStudent(){
+
+}
+
 //------------teacher------------------------------------------------------------------------------------------------------------
 teacher(){
   print('=============Main Menu For Teacher===============');
@@ -89,7 +107,25 @@ teacher(){
   } while (true);
 }
 
-//-------------add for parents--------------------------------------------------------------------------------------------------
+List teacherinfo = [];
+
+addTeacher(){
+
+}
+
+updateTeacher(){
+
+}
+
+deleteTeacher(){
+
+}
+
+listTeacher(){
+  
+}
+
+//-------------parents--------------------------------------------------------------------------------------------------
 parents(){
     print('=============Main Menu For Parents===============');
   print("Option 1: Add Parents");
@@ -117,4 +153,22 @@ parents(){
     print("Invalid Option! please try again.");
   } 
   } while (true);
+}
+
+List parentsinfo = [];
+
+addParents(){
+
+}
+
+updateParents(){
+
+}
+
+deleteParents(){
+
+}
+
+listParents(){
+  
 }
