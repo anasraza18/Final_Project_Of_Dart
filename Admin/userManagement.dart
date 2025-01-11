@@ -46,13 +46,13 @@ void student(){
     break;
   }
   if (InputOptionAdmin == '1') {
-     
+     addStudent();
   }else if(InputOptionAdmin == '2'){
-      
+      updateStudent();
   }else if(InputOptionAdmin == '3'){
-    
+    deleteStudent();
   }else if(InputOptionAdmin == '4'){
-    
+    listStudent();
   }else{
     print("Invalid Option! please try again.");
   } 
@@ -62,7 +62,17 @@ void student(){
 List studentinfo = [];
 
 addStudent(){
+  stdout.write("Enter the Student name : ");
+  String? stdname = stdin.readLineSync();
 
+  stdout.write("Enter the Student Password : ");
+  String? stdpassword = stdin.readLineSync();
+
+  studentinfo.add({'username' : stdname, 'password' : stdpassword});
+
+  studentinfo.forEach((e) {
+    print('Username : ${e['username']} , Password : ${e['password']}');
+  });
 }
 
 updateStudent(){
@@ -94,11 +104,11 @@ teacher(){
     break;
   }
   if (InputOptionAdmin == '1') {
-     
+     addTeacher();
   }else if(InputOptionAdmin == '2'){
-      
+      updateTeacher();
   }else if(InputOptionAdmin == '3'){
-    
+    deleteParents();
   }else if(InputOptionAdmin == '4'){
     
   }else{
@@ -142,13 +152,13 @@ parents(){
     break;
   }
   if (InputOptionAdmin == '1') {
-     
+     addParents();
   }else if(InputOptionAdmin == '2'){
-      
+      updateParents();
   }else if(InputOptionAdmin == '3'){
-    
+    deleteParents();
   }else if(InputOptionAdmin == '4'){
-    
+    listParents();
   }else{
     print("Invalid Option! please try again.");
   } 
