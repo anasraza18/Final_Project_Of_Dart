@@ -1,0 +1,3 @@
+studentLogin(){
+  print("student");
+}

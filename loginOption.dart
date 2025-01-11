@@ -1,14 +1,31 @@
 import 'dart:io';
+import 'adminLogin.dart';
+import 'parentsLogin.dart';
+import 'teacherLogin.dart';
 
 loginOption(){
   print('=============Main Menu===============');
   print("Option 1: Admin");
-  print("Option 1: Teacher");
-  print("Option 1: Student");
-  print("Option 1: Parent");
+  print("Option 2: Teacher");
+  print("Option 3: Student");
+  print("Option 4: Parent");
   print('');
-  
-  stdout.write('Select Any one : ');
-  int InputOption = int.parse(stdin.readLineSync()!);
-  print(InputOption);
+
+  do {
+    stdout.write('Select Any one or exit : ');
+  String? InputOption = stdin.readLineSync();
+
+  if(InputOption.toString().toLowerCase() == 'exit'){
+    break;
+  }
+  if (InputOption == '1') {
+    adminLogin(username: 'anas', password: "anas123"); 
+  }else if(InputOption == '2'){
+    teacherLogin();
+  }else if(InputOption == '3'){
+    parentsLogin();
+  }else{
+    print("Invalid Option! please try again.");
+  }
+  } while (true);
 }

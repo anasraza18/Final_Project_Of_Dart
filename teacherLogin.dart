@@ -1,0 +1,3 @@
+teacherLogin(){
+  print("teacher");
+}
