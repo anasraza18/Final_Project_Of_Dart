@@ -1,4 +1,4 @@
-import 'loginOption.dart';
+import 'SchoolManagementSystem.dart';
 
 void main(){
 

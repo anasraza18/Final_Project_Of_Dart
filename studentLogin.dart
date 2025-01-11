@@ -1,3 +1,0 @@
-studentLogin(){
-  print("student");
-}

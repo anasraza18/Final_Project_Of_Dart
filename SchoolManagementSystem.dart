@@ -1,7 +1,5 @@
 import 'dart:io';
-import 'adminLogin.dart';
-import 'parentsLogin.dart';
-import 'teacherLogin.dart';
+import 'authentication.dart';
 
 loginOption(){
   print('=============Main Menu===============');
