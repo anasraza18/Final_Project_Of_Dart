@@ -26,7 +26,7 @@ adminDashboard() {
       classManagement();
     } else if (InputOptionAdmin == '3') {
       attendanceReport();
-    } else if (InputOptionAdmin == '3') {
+    } else if (InputOptionAdmin == '4') {
       resultReport();
     } else {
       print("Invalid Option! please try again.");

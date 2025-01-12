@@ -191,7 +191,7 @@ teacher() {
     } else if (InputOptionAdmin == '3') {
       deleteTeacher();
     } else if (InputOptionAdmin == '4') {
-       listTeacher();
+      listTeacher();
     } else {
       print("Invalid Option! please try again.");
     }
@@ -225,7 +225,7 @@ addTeacher() {
 }
 
 updateTeacher() {
-    while (true) {
+  while (true) {
     stdout.write("Enter the id of teacher, you want to update or exit : ");
     String? updID = stdin.readLineSync()!;
 
@@ -281,7 +281,7 @@ updateTeacher() {
 }
 
 deleteTeacher() {
-    while (true) {
+  while (true) {
     stdout.write("Enter the teacher ID to remove or exit : ");
     String? remId = stdin.readLineSync()!;
 
@@ -304,9 +304,9 @@ deleteTeacher() {
 
 listTeacher() {
   teacherinfo.forEach((e) {
-        print(
-            'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
-      });
+    print(
+        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+  });
 }
 
 //-------------parents--------------------------------------------------------------------------------------------------
@@ -342,7 +342,7 @@ parents() {
 List parentsinfo = [];
 
 addParents() {
-    while (true) {
+  while (true) {
     stdout.write("Enter the id of parents or exit : ");
     String? addID = stdin.readLineSync()!;
 
@@ -366,7 +366,7 @@ addParents() {
 }
 
 updateParents() {
-      while (true) {
+  while (true) {
     stdout.write("Enter the id of parents, you want to update or exit : ");
     String? updID = stdin.readLineSync()!;
 
@@ -422,7 +422,7 @@ updateParents() {
 }
 
 deleteParents() {
-      while (true) {
+  while (true) {
     stdout.write("Enter the parents ID to remove or exit : ");
     String? remId = stdin.readLineSync()!;
 
@@ -445,7 +445,7 @@ deleteParents() {
 
 listParents() {
   parentsinfo.forEach((e) {
-        print(
-            'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
-      });
+    print(
+        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+  });
 }
