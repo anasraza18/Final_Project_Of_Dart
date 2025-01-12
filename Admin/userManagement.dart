@@ -3,14 +3,14 @@ import 'dart:io';
 
 userManagement(){
 
+  do {
   print('=============Main Menu For users===============');
   print("Option 1: student");
   print("Option 2: teacher");
   print("Option 3: Parents");
   print('');
-
-  do {
-    stdout.write('Select Any one or exit : ');
+  
+  stdout.write('Select Any one for user or exit : ');
   String? InputOptionAdmin = stdin.readLineSync();
 
   if(InputOptionAdmin.toString().toLowerCase() == 'exit'){
@@ -31,15 +31,17 @@ userManagement(){
 //-------------------------student------------------------------------------------------------------------------------------------
 
 void student(){
+  
+
+  do {
   print('=============Main Menu For Student===============');
   print("Option 1: Add Student");
   print("Option 2: Update Student");
   print("Option 3: Delete Student");
   print("Option 4: List Student");
   print('');
-
-  do {
-    stdout.write('Select Any one or exit : ');
+  
+  stdout.write('Select Any one for student or exit : ');
   String? InputOptionAdmin = stdin.readLineSync();
 
   if(InputOptionAdmin.toString().toLowerCase() == 'exit'){
@@ -62,21 +64,27 @@ void student(){
 List studentinfo = [];
 
 addStudent(){
-  stdout.write("Enter the Student name : ");
+  
+  while (true) {
+      stdout.write("Add the Student name or exit : ");
   String? stdname = stdin.readLineSync();
+
+  if (stdname.toString().toLowerCase() == 'exit') {
+      break;
+    }
 
   stdout.write("Enter the Student Password : ");
   String? stdpassword = stdin.readLineSync();
-
-  studentinfo.add({'username' : stdname, 'password' : stdpassword});
-
+    
+    studentinfo.add({'username' : stdname, 'password' : stdpassword});
+  }
   studentinfo.forEach((e) {
     print('Username : ${e['username']} , Password : ${e['password']}');
   });
 }
 
 updateStudent(){
-
+     print("upd");
 }
 
 deleteStudent(){
@@ -89,15 +97,16 @@ listStudent(){
 
 //------------teacher------------------------------------------------------------------------------------------------------------
 teacher(){
-  print('=============Main Menu For Teacher===============');
+
+  do {
+    print('=============Main Menu For Teacher===============');
   print("Option 1: Add Teacher");
   print("Option 2: Update Teacher");
   print("Option 3: Delete Teacher");
   print("Option 4: List Teacher");
   print('');
 
-  do {
-    stdout.write('Select Any one or exit : ');
+    stdout.write('Select Any one for teacher or exit : ');
   String? InputOptionAdmin = stdin.readLineSync();
 
   if(InputOptionAdmin.toString().toLowerCase() == 'exit'){
@@ -137,15 +146,16 @@ listTeacher(){
 
 //-------------parents--------------------------------------------------------------------------------------------------
 parents(){
-    print('=============Main Menu For Parents===============');
+
+  do {
+  print('=============Main Menu For Parents===============');
   print("Option 1: Add Parents");
   print("Option 2: Update Parents");
   print("Option 3: Delete parents");
   print("Option 4: List parents");
   print('');
 
-  do {
-    stdout.write('Select Any one or exit : ');
+    stdout.write('Select Any one for parent or exit : ');
   String? InputOptionAdmin = stdin.readLineSync();
 
   if(InputOptionAdmin.toString().toLowerCase() == 'exit'){

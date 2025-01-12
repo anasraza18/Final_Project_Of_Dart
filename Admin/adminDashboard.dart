@@ -6,6 +6,9 @@ import 'resultReport.dart';
 import 'userManagement.dart';
 
 adminDashboard(){
+
+
+  do {
   print('=============Main Menu For Admin Dashboard===============');
   print("Option 1: User Management");
   print("Option 2: Class Management");
@@ -13,7 +16,6 @@ adminDashboard(){
   print("Option 4: Result Report");
   print('');
 
-  do {
     stdout.write('Select Any one or exit : ');
   String? InputOptionAdmin = stdin.readLineSync();
 

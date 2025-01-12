@@ -2,6 +2,8 @@ import 'dart:io';
 import 'authentication.dart';
 
 loginOption(){
+
+  do {
   print('=============Main Menu===============');
   print("Option 1: Admin");
   print("Option 2: Teacher");
@@ -9,7 +11,6 @@ loginOption(){
   print("Option 4: Parent");
   print('');
 
-  do {
     stdout.write('Select Any one or exit : ');
   String? InputOption = stdin.readLineSync();
 
