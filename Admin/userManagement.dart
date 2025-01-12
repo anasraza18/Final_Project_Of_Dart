@@ -57,7 +57,15 @@ student() {
   } while (true);
 }
 
-List studentinfo = [];
+List studentinfo = [
+  {
+      'ID' : 0 ,
+      'username' : 'anas',
+      'roll_no' : 022,
+      'class' : 16,
+      'password' : 'anas123'
+  }
+  ];
 
 addStudent() {
   while (true) {
@@ -74,13 +82,19 @@ addStudent() {
     stdout.write("Enter the Student Password : ");
     String? stdpassword = stdin.readLineSync();
 
+    stdout.write("Enter the Student roll_no : ");
+    String? stdrollNo = stdin.readLineSync();
+
+    stdout.write("Enter the Student class : ");
+    String? stdclass = stdin.readLineSync();
+
     studentinfo
-        .add({'ID': addID, 'username': stdname, 'password': stdpassword});
+        .add({'ID': addID, 'username': stdname, 'password': stdpassword, 'roll_no' : stdrollNo, 'class' : stdclass});
   }
-  studentinfo.forEach((e) {
-    print(
-        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
-  });
+  // studentinfo.forEach((e) {
+  //   print(
+  //       'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+  // });
 }
 
 updateStudent() {
@@ -96,6 +110,8 @@ updateStudent() {
       print('=============Main Menu For Student===============');
       print("Option 1: Update Name");
       print("Option 2: Update password");
+      print("Option 2: Update roll_no");
+      print("Option 2: Update class");
       print('');
 
       stdout.write('Select Any one for student or exit : ');
@@ -124,6 +140,34 @@ updateStudent() {
             stdout.write("Update the pasword of Student : ");
             String? updPass = stdin.readLineSync()!;
             e['password'] = updPass;
+            studentinfo.forEach((e) {
+              print(
+                  'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+            });
+          } else {
+            print("Please enter the correct id");
+          }
+        }
+      }else if (InputOptionAdmin == '3') {
+        for (var e in studentinfo) {
+          if (updID == e['ID']) {
+            stdout.write("Update the class of Student : ");
+            String? updPass = stdin.readLineSync()!;
+            e['class'] = updPass;
+            studentinfo.forEach((e) {
+              print(
+                  'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+            });
+          } else {
+            print("Please enter the correct id");
+          }
+        }
+      }else if (InputOptionAdmin == '4') {
+        for (var e in studentinfo) {
+          if (updID == e['ID']) {
+            stdout.write("Update the roll_no of Student : ");
+            String? updrollNo = stdin.readLineSync()!;
+            e['roll_no'] = updrollNo;
             studentinfo.forEach((e) {
               print(
                   'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
@@ -164,7 +208,7 @@ deleteStudent() {
 listStudent() {
   studentinfo.forEach((e) {
     print(
-        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}, roll_no : ${e['roll_no']}, class : ${e['class']}');
   });
 }
 
@@ -198,7 +242,13 @@ teacher() {
   } while (true);
 }
 
-List teacherinfo = [];
+List teacherinfo = [
+  {
+    'ID' : 1,
+    'username' : 'anas',
+    'password' : 'anas123'
+  }
+];
 
 addTeacher() {
   while (true) {
@@ -339,7 +389,13 @@ parents() {
   } while (true);
 }
 
-List parentsinfo = [];
+List parentsinfo = [
+  {
+    'ID' : 1,
+    'username' : 'anas',
+    'password' : 'anas123'
+  }
+];
 
 addParents() {
   while (true) {
