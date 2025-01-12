@@ -1,0 +1,3 @@
+teacherDashboard(){
+  print("teacher");
+}

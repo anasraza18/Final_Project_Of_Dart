@@ -1,0 +1,3 @@
+studentDashboard(){
+  print("Student");
+}

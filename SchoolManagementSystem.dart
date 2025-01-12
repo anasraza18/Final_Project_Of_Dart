@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'Admin/userManagement.dart';
 import 'authentication.dart';
 
 loginOption(){
@@ -20,8 +21,10 @@ loginOption(){
   if (InputOption == '1') {
     adminLogin(username: 'anas', password: "anas123"); 
   }else if(InputOption == '2'){
-    teacherLogin();
+   teacherLogin();
   }else if(InputOption == '3'){
+    studentLogin();
+  }else if(InputOption == '4'){
     parentsLogin();
   }else{
     print("Invalid Option! please try again.");
