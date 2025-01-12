@@ -189,8 +189,9 @@ teacher() {
     } else if (InputOptionAdmin == '2') {
       updateTeacher();
     } else if (InputOptionAdmin == '3') {
-      deleteParents();
+      deleteTeacher();
     } else if (InputOptionAdmin == '4') {
+       listTeacher();
     } else {
       print("Invalid Option! please try again.");
     }
@@ -199,13 +200,114 @@ teacher() {
 
 List teacherinfo = [];
 
-addTeacher() {}
+addTeacher() {
+  while (true) {
+    stdout.write("Add the id of teacher or exit : ");
+    String? addID = stdin.readLineSync()!;
 
-updateTeacher() {}
+    if (addID.toString().toLowerCase() == 'exit') {
+      break;
+    }
 
-deleteTeacher() {}
+    stdout.write("Add the teacher name : ");
+    String? stdname = stdin.readLineSync();
 
-listTeacher() {}
+    stdout.write("Enter the teacher Password : ");
+    String? stdpassword = stdin.readLineSync();
+
+    teacherinfo
+        .add({'ID': addID, 'username': stdname, 'password': stdpassword});
+  }
+  teacherinfo.forEach((e) {
+    print(
+        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+  });
+}
+
+updateTeacher() {
+    while (true) {
+    stdout.write("Enter the id of teacher, you want to update or exit : ");
+    String? updID = stdin.readLineSync()!;
+
+    if (updID.toString().toLowerCase() == 'exit') {
+      break;
+    }
+
+    do {
+      print('=============Main Menu For teacher===============');
+      print("Option 1: Update Name");
+      print("Option 2: Update password");
+      print('');
+
+      stdout.write('Select Any one for teacher or exit : ');
+      String? InputOptionAdmin = stdin.readLineSync();
+
+      if (InputOptionAdmin.toString().toLowerCase() == 'exit') {
+        break;
+      }
+      if (InputOptionAdmin == '1') {
+        for (var e in teacherinfo) {
+          if (updID == e['ID']) {
+            stdout.write("Update the name of teacher : ");
+            String? updName = stdin.readLineSync()!;
+            e['username'] = updName;
+            teacherinfo.forEach((e) {
+              print(
+                  'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+            });
+          } else {
+            print("Please enter the correct id");
+          }
+        }
+      } else if (InputOptionAdmin == '2') {
+        for (var e in teacherinfo) {
+          if (updID == e['ID']) {
+            stdout.write("Update the pasword of teacher : ");
+            String? updPass = stdin.readLineSync()!;
+            e['password'] = updPass;
+            teacherinfo.forEach((e) {
+              print(
+                  'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+            });
+          } else {
+            print("Please enter the correct id");
+          }
+        }
+      } else {
+        print("Invalid Option! please try again.");
+      }
+    } while (true);
+  }
+}
+
+deleteTeacher() {
+    while (true) {
+    stdout.write("Enter the teacher ID to remove or exit : ");
+    String? remId = stdin.readLineSync()!;
+
+    if (remId.toString().toLowerCase() == 'exit') {
+      break;
+    }
+
+    var stdFound = teacherinfo.any((e) => e['ID'] == remId);
+    if (stdFound) {
+      teacherinfo.removeWhere((e) => e['ID'] == remId);
+      teacherinfo.forEach((e) {
+        print(
+            'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+      });
+    } else {
+      print("Please enter the correct id");
+    }
+  }
+}
+
+listTeacher() {
+  teacherinfo.forEach((e) {
+        print(
+            'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+      });
+}
 
 //-------------parents--------------------------------------------------------------------------------------------------
 parents() {
@@ -239,10 +341,111 @@ parents() {
 
 List parentsinfo = [];
 
-addParents() {}
+addParents() {
+    while (true) {
+    stdout.write("Enter the id of parents or exit : ");
+    String? addID = stdin.readLineSync()!;
 
-updateParents() {}
+    if (addID.toString().toLowerCase() == 'exit') {
+      break;
+    }
 
-deleteParents() {}
+    stdout.write("Add the parents name : ");
+    String? stdname = stdin.readLineSync();
 
-listParents() {}
+    stdout.write("Enter the parents Password : ");
+    String? stdpassword = stdin.readLineSync();
+
+    parentsinfo
+        .add({'ID': addID, 'username': stdname, 'password': stdpassword});
+  }
+  parentsinfo.forEach((e) {
+    print(
+        'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+  });
+}
+
+updateParents() {
+      while (true) {
+    stdout.write("Enter the id of parents, you want to update or exit : ");
+    String? updID = stdin.readLineSync()!;
+
+    if (updID.toString().toLowerCase() == 'exit') {
+      break;
+    }
+
+    do {
+      print('=============Main Menu For parents===============');
+      print("Option 1: Update Name");
+      print("Option 2: Update password");
+      print('');
+
+      stdout.write('Select Any one for parents or exit : ');
+      String? InputOptionAdmin = stdin.readLineSync();
+
+      if (InputOptionAdmin.toString().toLowerCase() == 'exit') {
+        break;
+      }
+      if (InputOptionAdmin == '1') {
+        for (var e in parentsinfo) {
+          if (updID == e['ID']) {
+            stdout.write("Update the name of parents : ");
+            String? updName = stdin.readLineSync()!;
+            e['username'] = updName;
+            parentsinfo.forEach((e) {
+              print(
+                  'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+            });
+          } else {
+            print("Please enter the correct id");
+          }
+        }
+      } else if (InputOptionAdmin == '2') {
+        for (var e in parentsinfo) {
+          if (updID == e['ID']) {
+            stdout.write("Update the pasword of parents : ");
+            String? updPass = stdin.readLineSync()!;
+            e['password'] = updPass;
+            parentsinfo.forEach((e) {
+              print(
+                  'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+            });
+          } else {
+            print("Please enter the correct id");
+          }
+        }
+      } else {
+        print("Invalid Option! please try again.");
+      }
+    } while (true);
+  }
+}
+
+deleteParents() {
+      while (true) {
+    stdout.write("Enter the parents ID to remove or exit : ");
+    String? remId = stdin.readLineSync()!;
+
+    if (remId.toString().toLowerCase() == 'exit') {
+      break;
+    }
+
+    var stdFound = parentsinfo.any((e) => e['ID'] == remId);
+    if (stdFound) {
+      parentsinfo.removeWhere((e) => e['ID'] == remId);
+      parentsinfo.forEach((e) {
+        print(
+            'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+      });
+    } else {
+      print("Please enter the correct id");
+    }
+  }
+}
+
+listParents() {
+  parentsinfo.forEach((e) {
+        print(
+            'ID : ${e['ID']} Username : ${e['username']} , Password : ${e['password']}');
+      });
+}
