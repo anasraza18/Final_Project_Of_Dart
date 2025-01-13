@@ -1,49 +1,72 @@
-//import '../Admin/userManagement.dart';
+import '../Admin/userManagement.dart';
 
-resultReport(){
+resultForStudent(){
   
-  // List reportCard = [
-  //   List.from(studentinfo),
-  //   {
+  List reportCard = [
+    studentinfo,
+    {
       
-  //     'subjects' : [
-  //       {'sub' : 'maths' , 'marks' : 88 , 'total_marks' : 100},
-  //       {'sub' : 'eng' , 'marks' : 87 , 'total_marks' : 100},
-  //       {'sub' : 'chemistry' , 'marks' : 77 , 'total_marks' : 100},
-  //       {'sub' : 'physics' , 'marks' : 76 , 'total_marks' : 100},
-  //       {'sub' : 'computer' , 'marks' : 65, 'total_marks' : 100}
-  //       ]
-  //   }
-  // ];
+      'subjects' : [
+        {'sub' : 'maths' , 'marks' : 88.0 , 'total_marks' : 100},
+        {'sub' : 'english' , 'marks' : 87.0 , 'total_marks' : 100},
+        {'sub' : 'chemistry' , 'marks' : 77.0 , 'total_marks' : 100},
+        {'sub' : 'physics' , 'marks' : 76.0 , 'total_marks' : 100},
+        {'sub' : 'computer' , 'marks' : 65.0, 'total_marks' : 100}
+        ]
+    }
+  ];
 
-  // for (var e in reportCard) {
-  //   print("=========Report Card=============");
-  //   print("");
-  //   print("ID : ${e['ID']}" );
-  //   print("ID : ${e['name']}" );
-  //   print("ID : ${e['roll_no']}" );
-  //   print("ID : ${e['class']}");
-  //   print('');
+  for (var e in reportCard[0]) {
+    print("=============Report Card==============");
+    print('');
+    print("ID : ${e['ID']}" );
+    print("Name : ${e['username']}" );
+    print("Rollno : ${e['roll_no']}" );
+    print("Class : ${e['class']}");
+    print("");
+    }
 
-  //   double totalobtainMarks = 0;
-  //   double totalMarks = 0;
-    
-  //   for (var v in e['subjects']) {
-  //     String subname = v['sub'];
-  //     int submarks = v['marks'];
-  //     int totalmarks = v['total_marks'];
-
-  //     print("${subname} : ${submarks}/$totalmarks");
-
-  //     totalobtainMarks += submarks;
-  //     totalMarks += totalmarks;
-  // }
-
-  // double percentage = (totalobtainMarks/totalMarks)*100;
-
-  // print("Total marks : ${totalobtainMarks}/${totalMarks}");
-  // print("Percentage : ${percentage}");
-  // }
-   print("okh");
+  int totalmarks = 0;
+  double obtainmarks = 0;
   
+  for (var sub in reportCard[1]['subjects']) {
+    
+    String subname = sub['sub'];
+    double submarks = sub['marks'];
+    int subtotalmarks = sub['total_marks'];
+
+    totalmarks += subtotalmarks;
+    obtainmarks += submarks;  
+
+    print("subject : ${subname}");
+    print("Marks  : ${submarks}/${subtotalmarks}");
+    print('');
+    
+  }
+
+  print("Total Obtain Marks : ${obtainmarks}/${totalmarks}"); 
+    double percentage = (obtainmarks/totalmarks)*100;
+    print("Percentage : ${percentage.toStringAsFixed(2)}%");
+    if (percentage > 80) {
+      print("Grade : A++");
+      print("Result : Pass");
+    }else if(percentage > 70){
+      print("Grade : A");
+      print("Result : Pass");
+    }else if(percentage > 60){
+      print("Grade : B");
+      print("Result : Pass");
+    }else if(percentage > 50){
+      print("Grade : C");
+      print("Result : Pass");
+    }else if(percentage > 40){
+      print("Grade : D");
+      print("Result : Pass");
+    }else if(percentage > 30){
+      print("Grade : E");
+      print("Result : Pass");
+    }else{
+      print("Result : Fail");
+    }
+    print('');
 }

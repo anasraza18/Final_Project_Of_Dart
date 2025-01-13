@@ -2,6 +2,7 @@ import 'dart:io';
 
 import '../Admin/resultReport.dart';
 import 'attendance.dart';
+import 'result.dart';
 import 'timetable.dart';
 
 studentDashboard(){
@@ -21,7 +22,7 @@ studentDashboard(){
     if (InputOptionAdmin == '1') {
       attendance();
     } else if (InputOptionAdmin == '2') {
-      resultReport();
+      resultForStudent();
     } else if (InputOptionAdmin == '3') {
       timeTable();
     } else {
