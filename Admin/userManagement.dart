@@ -1,5 +1,40 @@
 import 'dart:io';
 
+List studentinfo = [
+  {
+      'ID' : '0' ,
+      'username' : 'anas',
+      'roll_no' : 022,
+      'class' : 16,
+      'password' : 'anas123'
+  },
+  {
+      'ID' : '1' ,
+      'username' : 'ali',
+      'roll_no' : 024,
+      'class' : 6,
+      'password' : 'ali123'
+  }
+  ];
+
+List teacherinfo = [
+  {
+    'ID' : 1,
+    'username' : 'anas',
+    'password' : 'anas123'
+  }
+];
+
+List parentsinfo = [
+  {
+    'ID' : 1,
+    'username' : 'anas',
+    'password' : 'anas123'
+  }
+];
+
+
+
 userManagement() {
   do {
     print('=============Main Menu For users===============');
@@ -57,22 +92,6 @@ student() {
   } while (true);
 }
 
-List studentinfo = [
-  {
-      'ID' : '0' ,
-      'username' : 'anas',
-      'roll_no' : 022,
-      'class' : 16,
-      'password' : 'anas123'
-  },
-  {
-      'ID' : '1' ,
-      'username' : 'ali',
-      'roll_no' : 024,
-      'class' : 6,
-      'password' : 'ali123'
-  }
-  ];
 
 addStudent() {
   while (true) {
@@ -249,13 +268,6 @@ teacher() {
   } while (true);
 }
 
-List teacherinfo = [
-  {
-    'ID' : 1,
-    'username' : 'anas',
-    'password' : 'anas123'
-  }
-];
 
 addTeacher() {
   while (true) {
@@ -396,13 +408,6 @@ parents() {
   } while (true);
 }
 
-List parentsinfo = [
-  {
-    'ID' : 1,
-    'username' : 'anas',
-    'password' : 'anas123'
-  }
-];
 
 addParents() {
   while (true) {

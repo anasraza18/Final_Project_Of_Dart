@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import '../Admin/resultReport.dart';
 import 'attendance.dart';
 import 'result.dart';
 import 'timetable.dart';

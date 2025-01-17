@@ -2,8 +2,8 @@ import 'dart:io';
 
 import '../Admin/userManagement.dart';
 
-teacherResult() {
-  List reportCard = [
+
+List reportCard = [
     // studentinfo,
     // {
     //   'subjects': [
@@ -16,6 +16,10 @@ teacherResult() {
     // }
   ];
 
+  double percentage = 0.0 ;
+teacherResult() {
+  
+
   while (true) {
     stdout.write("Enter the student ID for generate report card or exit: ");
     String? studentid = stdin.readLineSync()!;
@@ -24,7 +28,8 @@ teacherResult() {
       break;
     }
 
-    var findstud = studentinfo.firstWhere((e) => e['ID'] == studentid);
+    var findstud = studentinfo.firstWhere((e) => e['ID'] == studentid, 
+      orElse: () => null,);
 
     if (findstud != null) {
       stdout.write("Enter the No of courses : ");
@@ -49,7 +54,7 @@ teacherResult() {
         finalmarks += totalmarks;
       }
 
-      double percentage = (obtainmarks / finalmarks) * 100;
+      percentage = (obtainmarks / finalmarks) * 100;
       //print(percentage);
 
       reportCard.add({
@@ -59,9 +64,48 @@ teacherResult() {
         'Obtained_marks': obtainmarks,
         'Percentage': percentage.toStringAsFixed(2)
       });
-      print('');
+
+      
     } else {
       print("Please enter the correct id");
     }
   }
+
+  reportCard.forEach((e) {
+        print("=============Report Card==============");
+        print("");
+
+        print("Student info");
+        (e['Student_information'] as Map).forEach((key, value) {
+          if (key != 'password') {
+            print("  $key: $value");
+          }
+        });
+        print("");
+        print("Total Marks : ${e['Obtained_marks']}/${e['Total_marks']}");
+        print("Percentage : ${e['Percentage']}");
+        if (percentage > 80) {
+          print("Grade : A++");
+          print("Result : Pass");
+        } else if (percentage > 70) {
+          print("Grade : A");
+          print("Result : Pass");
+        } else if (percentage > 60) {
+          print("Grade : B");
+          print("Result : Pass");
+        } else if (percentage > 50) {
+          print("Grade : C");
+          print("Result : Pass");
+        } else if (percentage > 40) {
+          print("Grade : D");
+          print("Result : Pass");
+        } else if (percentage > 30) {
+          print("Grade : E");
+          print("Result : Pass");
+        } else {
+          print("Result : Fail");
+        }
+        print('');
+      });
+      print('');
 }
