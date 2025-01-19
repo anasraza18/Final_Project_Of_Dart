@@ -1,6 +1,5 @@
 import 'SchoolManagementSystem.dart';
 
-void main(){
-
+void main() {
   loginOption();
 }
